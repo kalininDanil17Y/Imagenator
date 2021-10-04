@@ -17,6 +17,6 @@ class View
 
     public function buildTemplate($templateName, $params = [])
     {
-        return $this->twig->render($templateName . '.php', $params);
+        return $this->twig->render($templateName . '.twig', $params);
     }
 }

@@ -48,8 +48,10 @@ class Router extends View
             $func = $routes[$this->request->getPathInfo()];
             $response = $func(new Response, $this->request);
         }
-        $response = $response->end();
-        echo $response['body'];
+        if (!empty($response)) {
+            $response = $response->end();
+            echo $response['body'];
+        }
     }
 
     public function addRoute(string $route, $controller)
