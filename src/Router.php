@@ -44,7 +44,7 @@ class Router
              */
             if (array_key_exists("response", $res)) {
                 echo $res['response'];
-            }else if (array_key_exists("template", $res)) {
+            } else if (array_key_exists("template", $res)) {
                 $params = $res['templateParams'] ?? [];
 
                 $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/Views/');
@@ -62,59 +62,33 @@ class Router
     public function Handle()
     {
         if ($this->method === "GET") {
-            $this->methodGET();
+            $routes = $this->routes;
         } else {
-            $this->methodPOST();
+            $routes = $this->routesPost;
+        }
+
+        /*
+         * Если страницы нет, выводим 404
+         */
+        if (empty($this->routes[$this->request->getPathInfo()])) {
+            echo "404";
+            die;
+        }
+
+        /*
+         * Если контроллер является функцией, то выполняем её
+         * иначе выполняем класс и метод который указан в массиве
+         */
+        if (gettype($this->routes[$this->request->getPathInfo()]) === "array") {
+            $class = 'Imagenator\Main\Controllers\\' . $this->routes[$this->request->getPathInfo()][0];
+            $controller = new $class();
+            $this->response = $controller->{$this->routes[$this->request->getPathInfo()][1]}($this->request);
+        } else {
+            $func = $this->routes[$this->request->getPathInfo()];
+            $this->response = $func($this->request);
         }
 
         $this->render($this->response);
-    }
-
-    private function methodGET(){
-        /*
-         * Если страницы нет, выводим 404
-         */
-        if(empty($this->routes[$this->request->getPathInfo()])){
-            echo "404";
-            die;
-        }
-
-        /*
-         * Если контроллер является функцией, то выполняем её
-         * иначе выполняем класс и метод который указан в массиве
-         */
-        if (gettype($this->routes[$this->request->getPathInfo()]) === "array") {
-            $class = 'Imagenator\Main\Controllers\\' . $this->routes[$this->request->getPathInfo()][0];
-            $controller = new $class();
-            $this->response = $controller->{$this->routes[$this->request->getPathInfo()][1]}($this->request);
-        } else {
-            $func = $this->routes[$this->request->getPathInfo()];
-            $this->response = $func($this->request);
-        }
-    }
-
-    private function methodPOST(){
-        /*
-         * Если страницы нет, выводим 404
-         */
-        $this->routes = $this->routesPost;
-        if(empty($this->routes[$this->request->getPathInfo()])){
-            echo "404";
-            die;
-        }
-
-        /*
-         * Если контроллер является функцией, то выполняем её
-         * иначе выполняем класс и метод который указан в массиве
-         */
-        if (gettype($this->routes[$this->request->getPathInfo()]) === "array") {
-            $class = 'Imagenator\Main\Controllers\\' . $this->routes[$this->request->getPathInfo()][0];
-            $controller = new $class();
-            $this->response = $controller->{$this->routes[$this->request->getPathInfo()][1]}($this->request);
-        } else {
-            $func = $this->routes[$this->request->getPathInfo()];
-            $this->response = $func($this->request);
-        }
     }
 
     public function addRoute($route, $controller)
