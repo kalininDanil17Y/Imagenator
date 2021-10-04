@@ -50,40 +50,8 @@ class Router extends View
             $this->response = $func(new Response, $this->request);
         }
 
-        /*
-         * Если ответ является массивом
-         * то обрабатываем настройки
-         */
-        if (gettype($this->response) === "array") {
-            /*
-             * Если указан Code, устанавливаем его
-             */
-            if (array_key_exists("code", $this->response)) {
-                http_response_code($this->response['code']);
-            }
-
-            /*
-             * Если указаны заголовки, применяем их
-             */
-            if (!empty($this->response['header'])) {
-                foreach ($this->response['header'] as $name => $value) {
-                    header($name . ": " . $value);
-                }
-            }
-
-            /*
-             * Если есть ответ, печатаем его
-             */
-            if (array_key_exists("response", $this->response)) {
-                echo $this->response['response'];
-            } else if (array_key_exists("template", $this->response)) {
-                $params = $this->response['templateParams'] ?? [];
-                $this->printTemplate($this->response['template'], $params);
-            }
-
-        }else if(gettype($this->response) === "string") {
-            echo $this->response;
-        }
+        $this->response = $this->response->end();
+        echo $this->response['body'];
     }
 
     private function render($res){
