@@ -70,7 +70,7 @@ class Router
         /*
          * Если страницы нет, выводим 404
          */
-        if (empty($this->routes[$this->request->getPathInfo()])) {
+        if (empty($routes[$this->request->getPathInfo()])) {
             echo "404";
             die;
         }
@@ -79,12 +79,12 @@ class Router
          * Если контроллер является функцией, то выполняем её
          * иначе выполняем класс и метод который указан в массиве
          */
-        if (gettype($this->routes[$this->request->getPathInfo()]) === "array") {
-            $class = 'Imagenator\Main\Controllers\\' . $this->routes[$this->request->getPathInfo()][0];
+        if (gettype($routes[$this->request->getPathInfo()]) === "array") {
+            $class = 'Imagenator\Main\Controllers\\' . $routes[$this->request->getPathInfo()][0];
             $controller = new $class();
-            $this->response = $controller->{$this->routes[$this->request->getPathInfo()][1]}($this->request);
+            $this->response = $controller->{$routes[$this->request->getPathInfo()][1]}($this->request);
         } else {
-            $func = $this->routes[$this->request->getPathInfo()];
+            $func = $routes[$this->request->getPathInfo()];
             $this->response = $func($this->request);
         }
 
