@@ -20,6 +20,7 @@
     },
     "require": {
         "symfony/http-foundation": "5.4.x-dev",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "ramsey/uuid": "4.x-dev"
     }
 }
