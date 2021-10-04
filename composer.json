@@ -1,0 +1,25 @@
+{
+    "name": "imagenator/start",
+    "description": "Image",
+    "type": "project",
+    "license": "no",
+    "autoload": {
+        "psr-4": {
+            "Imagenator\\Main\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Danil",
+            "email": "my@ro2005.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "symfony/var-dumper": "5.4.x-dev"
+    },
+    "require": {
+        "symfony/http-foundation": "5.4.x-dev",
+        "twig/twig": "^3.0"
+    }
+}
