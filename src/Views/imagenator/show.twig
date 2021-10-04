@@ -1,0 +1,100 @@
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <style>
+
+        .gallery-title
+        {
+            font-size: 36px;
+            color: #42B32F;
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 70px;
+        }
+        .gallery-title:after {
+            content: "";
+            position: absolute;
+            width: 7.5%;
+            left: 46.5%;
+            height: 45px;
+            border-bottom: 1px solid #5e5e5e;
+        }
+        .gallery-link
+        {
+            font-size: 18px;
+            color: #42B32F;
+            text-align: center;
+            text-decoration: none;
+        }
+        .gallery-link:hover{
+            color: #3cbd26;
+        }
+        .linkblock{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .filter-button
+        {
+            font-size: 18px;
+            border: 1px solid #42B32F;
+            border-radius: 5px;
+            text-align: center;
+            color: #42B32F;
+            margin-bottom: 30px;
+
+        }
+        .filter-button:hover
+        {
+            font-size: 18px;
+            border: 1px solid #42B32F;
+            border-radius: 5px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #42B32F;
+
+        }
+        .btn-default:active .filter-button:active
+        {
+            background-color: #42B32F;
+            color: white;
+        }
+
+        .port-image
+        {
+            width: 100%;
+        }
+
+        .gallery_product
+        {
+            margin-bottom: 30px;
+        }
+
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12 col-centered">
+                <h1 class="gallery-title">Imagenator</h1>
+            </div>
+
+            <div class="linkblock">
+                <a class="gallery-link" href="/upload">Загрузить картинку...</a>
+            </div>
+            <div align="center">
+                <button class="btn btn-default filter-button" data-filter="all">Все</button>
+                <button class="btn btn-default filter-button" data-filter="my">Мои</button>
+            </div>
+
+            {% for image, ext in images %}
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter my">
+                <img src="/images/{{ image }}" class="img-responsive" alt="" title="{{ ext }}">
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</body>
+</html>

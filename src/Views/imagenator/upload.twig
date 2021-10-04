@@ -1,0 +1,134 @@
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<style>
+
+    .gallery-title
+    {
+        font-size: 36px;
+        color: #42B32F;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 70px;
+    }
+    .gallery-title:after {
+        content: "";
+        position: absolute;
+        width: 7.5%;
+        left: 46.5%;
+        height: 45px;
+        border-bottom: 1px solid #5e5e5e;
+    }
+    .gallery-link
+    {
+        font-size: 18px;
+        color: #42B32F;
+        text-align: center;
+        text-decoration: none;
+        z-index: 8889;
+    }
+    .gallery-link:hover{
+        color: #3cbd26;
+    }
+    .linkblock{
+        position: relative;
+        margin-bottom: 20px;
+        text-align: center;
+        z-index: 8888;
+    }
+
+
+    .parent {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: auto;
+        z-index: 1;
+        border-radius: 12px 43px;
+    }
+
+    .block {
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #60a839;
+        border-radius: 12px 43px;
+    }
+    img {
+        border-radius: 12px 43px;
+    }
+
+</style>
+<div class="container">
+    <div class="row">
+        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12 col-centered">
+            <h1 class="gallery-title">Imagenator</h1>
+        </div>
+
+        <div class="linkblock">
+            <a class="gallery-link" href="/">Назад</a>
+        </div>
+
+
+        <div class="parent">
+            <div class="block">
+                <img id="upload" src="http://localhost/drop.jpg" alt=""/>
+            </div>
+            <form id="form"><input type="file" accept=".png, .jpg, .jpeg" id="uploadInput" name="image" style="display: none;" /></form>
+        </div>
+
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $("#upload").click(function() {
+            $("input[id='uploadInput']").click();
+        });
+
+        $("#uploadInput").change(function(){
+            var file = document.getElementById('uploadInput').files[0];
+            var reader = new FileReader();
+            reader.readAsText(file, 'UTF-8');
+            reader.onload = shipOff;
+
+            function shipOff(event) {
+                var formData = new FormData(document.getElementById('form'));
+
+                $.ajax({
+                    type: 'POST',
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        if (data == "error") {
+                            alert("Ошибка загрузки");
+                        } else {
+                            var form = $('<form action="/result" method="post">' +
+                                '<input type="hidden" name="name" value="' + data + '" />' +
+                                '</form>');
+                            $('body').append(form);
+                            form.submit();
+                        }
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
