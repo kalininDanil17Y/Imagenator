@@ -7,6 +7,7 @@ class Router
 {
     private $routes = [];
     private $routesPost = [];
+
     private $response;
     protected $method;
     protected $request;
@@ -15,6 +16,9 @@ class Router
     {
         $this->request = Request::createFromGlobals();
         $this->method = $this->request->getMethod();
+
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/Views/');
+        $this->twig = new \Twig\Environment($loader);
     }
 
     private function render($res){
@@ -47,9 +51,8 @@ class Router
             } else if (array_key_exists("template", $res)) {
                 $params = $res['templateParams'] ?? [];
 
-                $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/Views/');
-                $twig = new \Twig\Environment($loader);
-                echo $twig->render($res['template'] . '.php', $params);
+
+                echo $this->twig->render($res['template'] . '.php', $params);
             }
         }else if(gettype($res) === "string") {
             /*
@@ -71,7 +74,7 @@ class Router
          * Если страницы нет, выводим 404
          */
         if (empty($routes[$this->request->getPathInfo()])) {
-            echo "404";
+            echo $this->twig->render('errors/404.php', []);
             die;
         }
 
