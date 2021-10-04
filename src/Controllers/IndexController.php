@@ -1,25 +1,22 @@
 <?php
 namespace Imagenator\Main\Controllers;
 
-use Imagenator\Main\Response;
-
 class IndexController
 {
-    public function form($req)
+    public function form($response, $req)
     {
-        $resp = new Response();
-        return $resp->view('form', [])
+        return $response->view('form')
             ->setStatus(200)
             ->setHeader('Content-type', 'text/html;')
             ->end();
     }
 
-    public function post($req)
+    public function post($response, $req)
     {
         $name = $req->request->get('name');
-        return [
-            'template' => 'index',
-            'templateParams' => ['name' => $name]
-        ];
+        return $response->view('index', ['name' => $name])
+            ->setStatus(200)
+            ->setHeader('Content-type', 'text/html;')
+            ->end();
     }
 }

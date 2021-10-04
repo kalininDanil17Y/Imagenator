@@ -1,6 +1,7 @@
 <?php
 namespace Imagenator\Main;
 
+use Imagenator\Main\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 class Router extends View
@@ -43,10 +44,10 @@ class Router extends View
         if (gettype($routes[$this->request->getPathInfo()]) === "array") {
             $class = 'Imagenator\Main\Controllers\\' . $routes[$this->request->getPathInfo()][0];
             $controller = new $class();
-            $this->response = $controller->{$routes[$this->request->getPathInfo()][1]}($this->request);
+            $this->response = $controller->{$routes[$this->request->getPathInfo()][1]}(new Response, $this->request);
         } else {
             $func = $routes[$this->request->getPathInfo()];
-            $this->response = $func($this->request);
+            $this->response = $func(new Response, $this->request);
         }
 
         /*
