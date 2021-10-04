@@ -12,7 +12,7 @@ class FirstController
 
     public function post($response, $request)
     {
-        $name = $req->request->get('name');
+        $name = $request->request->get('name');
         return $response->view('index', ['name' => $name])
             ->setStatus(202);
     }

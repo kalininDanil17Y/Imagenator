@@ -7,14 +7,21 @@ class Response extends View
 
     public function __construct()
     {
-        $this->init();
+        $this->viewInit();
         return $this;
     }
 
     public function view($templateName, $params = [])
     {
-        $responseHTML = $this->printTemplate($templateName, $params);
+        $responseHTML = $this->buildTemplate($templateName, $params);
         $this->response['body'] = $responseHTML;
+        return $this;
+    }
+
+    public function redirect($location, $code = 301)
+    {
+        http_response_code($code);
+        header("Location: {$location}");
         return $this;
     }
 
@@ -25,7 +32,8 @@ class Response extends View
         return $this;
     }
 
-    public function setStatus($par1 = 200, $par2 = null){
+    public function setStatus($par1 = 200, $par2 = null)
+    {
         if ($par2 == null) {
             http_response_code($par1);
             $this->response['code'] = $par1; //Set code
@@ -37,12 +45,14 @@ class Response extends View
         return $this;
     }
 
-    public function setBody($text){
+    public function setBody($text)
+    {
         $this->response['body'] = $text;
         return $this;
     }
 
-    public function end(){
+    public function end()
+    {
         return $this->response;
     }
 }

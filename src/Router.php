@@ -9,7 +9,6 @@ class Router extends View
     private $routes = [];
     private $routesPost = [];
 
-    private $response;
     protected $method;
     protected $request;
 
@@ -17,7 +16,7 @@ class Router extends View
     {
         $this->request = Request::createFromGlobals();
         $this->method = $this->request->getMethod();
-        $this->init();
+        $this->viewInit();
     }
 
     public function Handle()
@@ -33,7 +32,7 @@ class Router extends View
          * Если страницы нет, выводим 404
          */
         if (empty($routes[$this->request->getPathInfo()])) {
-            $this->printTemplate('errors/404');
+            echo $this->buildTemplate('errors/404');
             die;
         }
 
@@ -44,29 +43,24 @@ class Router extends View
         if (gettype($routes[$this->request->getPathInfo()]) === "array") {
             $class = 'Imagenator\Main\Controllers\\' . $routes[$this->request->getPathInfo()][0];
             $controller = new $class();
-            $this->response = $controller->{$routes[$this->request->getPathInfo()][1]}(new Response, $this->request);
+            $response = $controller->{$routes[$this->request->getPathInfo()][1]}(new Response, $this->request);
         } else {
             $func = $routes[$this->request->getPathInfo()];
-            $this->response = $func(new Response, $this->request);
+            $response = $func(new Response, $this->request);
         }
-
-        $this->response = $this->response->end();
-        echo $this->response['body'];
-    }
-
-    private function render($res){
-
+        $response = $response->end();
+        echo $response['body'];
     }
 
     public function addRoute(string $route, $controller)
     {
-        //Устанавливаем контроллер
+        //Устанавливаем контроллер GET
         $this->routes[$route] = $controller;
     }
 
     public function addRoutePost(string $route, $controller)
     {
-        //Устанавливаем контроллер
+        //Устанавливаем контроллер POST
         $this->routesPost[$route] = $controller;
     }
 }

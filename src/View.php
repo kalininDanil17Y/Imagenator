@@ -9,14 +9,14 @@ class View
 {
     private $twig;
 
-    public function init()
+    public function viewInit()
     {
         $loader = new FilesystemLoader(__DIR__ . '/Views/');
         $this->twig = new Environment($loader);
     }
 
-    public function printTemplate($templateName, $params = [])
+    public function buildTemplate($templateName, $params = [])
     {
-        echo $this->twig->render($templateName . '.php', $params);
+        return $this->twig->render($templateName . '.php', $params);
     }
 }

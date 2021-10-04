@@ -12,11 +12,10 @@ class App
         $rout->addRoutePost('/', ['FirstController', 'post']);
         $rout->addRoute('/blablabla', ['SecondController', 'blablabla']);
         $rout->addRoute('/hellYeah', function ($response, $request){
-            dump($req);
+            dump($response);
+            dump($request);
         });
 
         $rout->Handle();
-
-
     }
 }
