@@ -7,16 +7,13 @@ class IndexController
     {
         return $response->view('form')
             ->setStatus(200)
-            ->setHeader('Content-type', 'text/html;')
-            ->end();
+            ->setHeader('Content-type', 'text/html;');
     }
 
     public function post($response, $req)
     {
         $name = $req->request->get('name');
         return $response->view('index', ['name' => $name])
-            ->setStatus(200)
-            ->setHeader('Content-type', 'text/html;')
-            ->end();
+            ->setStatus(202);
     }
 }

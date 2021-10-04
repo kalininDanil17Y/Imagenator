@@ -8,9 +8,10 @@ class App
     {
         $rout = new Router();
 
-        $rout->addRoute('/', ['IndexController', 'form']);
-        $rout->addRoutePost('/', ['IndexController', 'post']);
-        $rout->addRoute('/hellYeah', function ($req){
+        $rout->addRoute('/', ['FirstController', 'form']);
+        $rout->addRoutePost('/', ['FirstController', 'post']);
+        $rout->addRoute('/blablabla', ['SecondController', 'blablabla']);
+        $rout->addRoute('/hellYeah', function ($response, $request){
             dump($req);
         });
 
