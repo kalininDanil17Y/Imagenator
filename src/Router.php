@@ -3,7 +3,7 @@ namespace Imagenator\Main;
 
 use Symfony\Component\HttpFoundation\Request;
 
-class Router
+class Router extends View
 {
     private $routes = [];
     private $routesPost = [];
@@ -16,54 +16,12 @@ class Router
     {
         $this->request = Request::createFromGlobals();
         $this->method = $this->request->getMethod();
-
-        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/Views/');
-        $this->twig = new \Twig\Environment($loader);
-    }
-
-    private function render($res){
-        /*
-         * Если ответ является массивом
-         * то обрабатываем настройки
-         */
-        if (gettype($res) === "array") {
-            /*
-             * Если указан Code, устанавливаем его
-             */
-            if (array_key_exists("code", $res)) {
-                http_response_code($res['code']);
-            }
-
-            /*
-             * Если указаны заголовки, применяем их
-             */
-            if (!empty($res['header'])) {
-                foreach ($res['header'] as $name => $value) {
-                    header($name . ": " . $value);
-                }
-            }
-
-            /*
-             * Если есть ответ, печатаем его
-             */
-            if (array_key_exists("response", $res)) {
-                echo $res['response'];
-            } else if (array_key_exists("template", $res)) {
-                $params = $res['templateParams'] ?? [];
-
-
-                echo $this->twig->render($res['template'] . '.php', $params);
-            }
-        }else if(gettype($res) === "string") {
-            /*
-             * Печатаем текст
-             */
-            echo $res;
-        }
+        $this->init();
     }
 
     public function Handle()
     {
+
         if ($this->method === "GET") {
             $routes = $this->routes;
         } else {
@@ -74,7 +32,7 @@ class Router
          * Если страницы нет, выводим 404
          */
         if (empty($routes[$this->request->getPathInfo()])) {
-            echo $this->twig->render('errors/404.php', []);
+            $this->printTemplate('errors/404');
             die;
         }
 
@@ -91,16 +49,53 @@ class Router
             $this->response = $func($this->request);
         }
 
-        $this->render($this->response);
+        /*
+         * Если ответ является массивом
+         * то обрабатываем настройки
+         */
+        if (gettype($this->response) === "array") {
+            /*
+             * Если указан Code, устанавливаем его
+             */
+            if (array_key_exists("code", $this->response)) {
+                http_response_code($this->response['code']);
+            }
+
+            /*
+             * Если указаны заголовки, применяем их
+             */
+            if (!empty($this->response['header'])) {
+                foreach ($this->response['header'] as $name => $value) {
+                    header($name . ": " . $value);
+                }
+            }
+
+            /*
+             * Если есть ответ, печатаем его
+             */
+            if (array_key_exists("response", $this->response)) {
+                echo $this->response['response'];
+            } else if (array_key_exists("template", $this->response)) {
+                $params = $this->response['templateParams'] ?? [];
+                $this->printTemplate($this->response['template'], $params);
+            }
+
+        }else if(gettype($this->response) === "string") {
+            echo $this->response;
+        }
     }
 
-    public function addRoute($route, $controller)
+    private function render($res){
+
+    }
+
+    public function addRoute(string $route, $controller)
     {
         //Устанавливаем контроллер
         $this->routes[$route] = $controller;
     }
 
-    public function addRoutePost($route, $controller)
+    public function addRoutePost(string $route, $controller)
     {
         //Устанавливаем контроллер
         $this->routesPost[$route] = $controller;
