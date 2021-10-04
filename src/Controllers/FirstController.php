@@ -6,7 +6,7 @@ class FirstController
     public function form($response, $request)
     {
         return $response->view('form')
-            ->setStatus(200)
+            ->setStatus(201)
             ->setHeader('Content-type', 'text/html;');
     }
 
