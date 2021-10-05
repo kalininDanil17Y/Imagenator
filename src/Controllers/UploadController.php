@@ -4,14 +4,15 @@ use Ramsey\Uuid\Uuid;
 
 class UploadController
 {
+    private $Imagedirectory = __DIR__ . '/../../images'; // путь к директории с изображениями
+
     public function showPage($response, $request)
     {
-        $directory       = __DIR__ . '/../../images'; // путь к директории с изображениями
-        $allowed_types = ['png', 'jpg', 'jpeg', 'gif']; // показывать расширения
+        $allowed_types = ['png', 'jpg', 'jpeg']; // показывать расширения
         $images = [];
         $i = 0;
         //пробуем открыть папку
-        $dir_handle = @opendir($directory) or die("Ошибка при открытии папки !!!");
+        $dir_handle = @opendir($this->Imagedirectory) or die("Ошибка при открытии папки !!!");
         while ($file = readdir($dir_handle))
         {
             if($file == "." || $file == "..") continue;
@@ -54,10 +55,10 @@ class UploadController
             return $response->setBody('error');
         }
 
-        $imageFullName = __DIR__ . '/../../images/' . $uuid->toString() . '.' . $imageFormat;
+        $imageFullName = $this->Imagedirectory . "/" . $uuid->toString() . '.' . $imageFormat;
 
         if (move_uploaded_file($image->getPathname(), $imageFullName)) {
-            return $response->setBody($uuid->toString());
+            return $response->setBody(json_encode(['name' => $uuid->toString(), 'format' => $imageFormat]));
         }
         return $response->setBody('error');
     }
@@ -65,6 +66,7 @@ class UploadController
     public function result($response, $request)
     {
         $name = $request->request->get('name');
-        return $response->view("imagenator/result", ["id" => $name]);
+        $format = $request->request->get('format');
+        return $response->view("imagenator/result", ["id" => $name, "format" => $format, ]);
     }
 }

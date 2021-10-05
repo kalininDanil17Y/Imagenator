@@ -2,7 +2,10 @@
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <style>
@@ -37,40 +40,36 @@
         margin-bottom: 20px;
         text-align: center;
     }
-    .filter-button
-    {
-        font-size: 18px;
-        border: 1px solid #42B32F;
-        border-radius: 5px;
-        text-align: center;
-        color: #42B32F;
-        margin-bottom: 30px;
-
-    }
-    .filter-button:hover
-    {
-        font-size: 18px;
-        border: 1px solid #42B32F;
-        border-radius: 5px;
-        text-align: center;
-        color: #ffffff;
-        background-color: #42B32F;
-
-    }
     .btn-default:active .filter-button:active
     {
         background-color: #42B32F;
         color: white;
     }
 
-    .port-image
+    .button, .input
     {
-        width: 100%;
-    }
-
-    .gallery_product
-    {
+        border: 1px solid #42B32F;
+        border-radius: 0 5px 5px 0;
+        text-align: center;
+        color: #42B32F;
         margin-bottom: 30px;
+
+    }
+    .button:hover,
+    .input:hover
+    {
+        border: 1px solid #42B32F;
+        border-radius: 0 7px 7px 0;
+        text-align: center;
+        color: #ffffff;
+        background-color: #42B32F;
+
+    }
+    .input {
+        border-radius: 5px 0 0 5px;
+    }
+    .input:hover {
+        border-radius: 7px 0 0 7px;
     }
 
 </style>
@@ -84,11 +83,26 @@
             <a class="gallery-link" href="/">Назад</a>
         </div>
 
-        <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter my">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
             <p>Картинка успешно загружена, id: {{ id }}</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-6">
+            <p>Ссылка на изобажение</p>
+            <input class="input button" style="width: 80%; float:left;" type="text" value="http://localhost/images/{{ id }}.{{ format }}" id="imageLink" disabled>
+            <button onclick="copy(this)" style="width: 20%;" class="button">Скопировать</button>
         </div>
 
     </div>
 </div>
+<script>
+    function copy(but) {
+        $('#imageLink').prop('disabled', false);
+        var copyText = document.getElementById("imageLink");
+        copyText.select();
+        document.execCommand("copy");
+        $('#imageLink').prop('disabled', true);
+        $(but).text("~Скопировано~");
+    }
+</script>
 </body>
 </html>

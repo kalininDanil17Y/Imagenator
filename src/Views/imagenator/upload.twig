@@ -115,8 +115,10 @@
                         if (data == "error") {
                             alert("Ошибка загрузки");
                         } else {
+                            var info = JSON.parse(data);
                             var form = $('<form action="/result" method="post">' +
-                                '<input type="hidden" name="name" value="' + data + '" />' +
+                                '<input type="hidden" name="name" value="' + info.name + '" />' +
+                                '<input type="hidden" name="format" value="' + info.format + '" />' +
                                 '</form>');
                             $('body').append(form);
                             form.submit();
