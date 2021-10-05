@@ -10,9 +10,21 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class Router extends View
 {
+    /**
+     * @var array
+     */
     private $routes = [];
+    /**
+     * @var array
+     */
     private $routesPost = [];
+    /**
+     * @var string
+     */
     protected $method;
+    /**
+     * @var Request
+     */
     protected $request;
 
     /**
@@ -25,6 +37,9 @@ class Router extends View
         $this->viewInit();
     }
 
+    /**
+     *
+     */
     public function Handle()
     {
 

@@ -2,10 +2,22 @@
 namespace Imagenator\Main\Controller;
 use Ramsey\Uuid\Uuid;
 
+/**
+ * Class UploadController
+ * @package Imagenator\Main\Controller
+ */
 class UploadController
 {
+    /**
+     * @var string
+     */
     private $Imagedirectory = __DIR__ . '/../../public/images'; // путь к директории с изображениями
 
+    /**
+     * @param $response
+     * @param $request
+     * @return mixed
+     */
     public function showPage($response, $request)
     {
         $allowed_types = ['png', 'jpg', 'jpeg']; // показывать расширения
@@ -31,11 +43,21 @@ class UploadController
         return $response->view("imagenator/show", ['images' => $images]);
     }
 
+    /**
+     * @param $response
+     * @param $request
+     * @return mixed
+     */
     public function uploadPage($response, $request)
     {
         return $response->view("imagenator/upload");
     }
 
+    /**
+     * @param $response
+     * @param $request
+     * @return mixed
+     */
     public function upload($response, $request)
     {
         $uuid = Uuid::uuid4();
@@ -63,6 +85,11 @@ class UploadController
         return $response->setBody('error');
     }
 
+    /**
+     * @param $response
+     * @param $request
+     * @return mixed
+     */
     public function result($response, $request)
     {
         $name = $request->request->get('name');

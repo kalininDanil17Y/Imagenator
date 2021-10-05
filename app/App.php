@@ -10,6 +10,7 @@ use Ramsey\Uuid\Uuid;
  */
 class App
 {
+
     public function init()
     {
         $rout = new Router();

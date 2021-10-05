@@ -10,8 +10,14 @@ use \Twig\Environment;
  */
 class View
 {
+    /**
+     * @var
+     */
     private $twig;
 
+    /**
+     *
+     */
     public function viewInit()
     {
         $loader = new FilesystemLoader(__DIR__ . '/../templates/');

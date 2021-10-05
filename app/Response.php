@@ -7,8 +7,14 @@ namespace App\Imagenator;
  */
 class Response extends View
 {
+    /**
+     * @var array
+     */
     private $response = [];
 
+    /**
+     * Response constructor.
+     */
     public function __construct()
     {
         $this->viewInit();
