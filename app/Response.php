@@ -1,6 +1,10 @@
 <?php
 namespace App\Imagenator;
 
+/**
+ * Class Response
+ * @package App\Imagenator
+ */
 class Response extends View
 {
     private $response = [];
@@ -11,6 +15,11 @@ class Response extends View
         return $this;
     }
 
+    /**
+     * @param $templateName
+     * @param array $params
+     * @return $this
+     */
     public function view($templateName, $params = [])
     {
         $responseHTML = $this->buildTemplate($templateName, $params);
@@ -18,6 +27,11 @@ class Response extends View
         return $this;
     }
 
+    /**
+     * @param $location
+     * @param int $code
+     * @return $this
+     */
     public function redirect($location, $code = 301)
     {
         http_response_code($code);
@@ -25,6 +39,11 @@ class Response extends View
         return $this;
     }
 
+    /**
+     * @param $headName
+     * @param string $headValue
+     * @return $this
+     */
     public function setHeader($headName, $headValue = '')
     {
         header($headName . ": " . $headValue);
@@ -32,6 +51,11 @@ class Response extends View
         return $this;
     }
 
+    /**
+     * @param int $par1
+     * @param null $par2
+     * @return $this
+     */
     public function setStatus($par1 = 200, $par2 = null)
     {
         if ($par2 == null) {
@@ -45,12 +69,19 @@ class Response extends View
         return $this;
     }
 
+    /**
+     * @param $text
+     * @return $this
+     */
     public function setBody($text)
     {
         $this->response['body'] = $text;
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function end()
     {
         return $this->response;

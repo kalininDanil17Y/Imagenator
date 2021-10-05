@@ -4,6 +4,10 @@ namespace App\Imagenator;
 use App\Imagenator\Router;
 use Ramsey\Uuid\Uuid;
 
+/**
+ * Class App
+ * @package App\Imagenator
+ */
 class App
 {
     public function init()

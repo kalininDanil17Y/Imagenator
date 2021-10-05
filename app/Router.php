@@ -4,14 +4,20 @@ namespace App\Imagenator;
 use App\Imagenator\Response;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class Router
+ * @package App\Imagenator
+ */
 class Router extends View
 {
     private $routes = [];
     private $routesPost = [];
-
     protected $method;
     protected $request;
 
+    /**
+     * Router constructor.
+     */
     public function __construct()
     {
         $this->request = Request::createFromGlobals();
@@ -28,18 +34,11 @@ class Router extends View
             $routes = $this->routesPost;
         }
 
-        /*
-         * Если страницы нет, выводим 404
-         */
         if (empty($routes[$this->request->getPathInfo()])) {
             echo $this->buildTemplate('errors/404');
             die;
         }
 
-        /*
-         * Если контроллер является функцией, то выполняем её
-         * иначе выполняем класс и метод который указан в массиве
-         */
         if (gettype($routes[$this->request->getPathInfo()]) === "array") {
             $class = 'Imagenator\Main\Controller\\' . $routes[$this->request->getPathInfo()][0];
             $controller = new $class();
@@ -54,15 +53,21 @@ class Router extends View
         }
     }
 
+    /**
+     * @param string $route
+     * @param $controller
+     */
     public function addRoute(string $route, $controller)
     {
-        //Устанавливаем контроллер GET
         $this->routes[$route] = $controller;
     }
 
+    /**
+     * @param string $route
+     * @param $controller
+     */
     public function addRoutePost(string $route, $controller)
     {
-        //Устанавливаем контроллер POST
         $this->routesPost[$route] = $controller;
     }
 }
