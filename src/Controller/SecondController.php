@@ -1,5 +1,5 @@
 <?php
-namespace Imagenator\Main\Controllers;
+namespace Imagenator\Main\Controller;
 
 class SecondController
 {

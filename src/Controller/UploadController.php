@@ -1,10 +1,10 @@
 <?php
-namespace Imagenator\Main\Controllers;
+namespace Imagenator\Main\Controller;
 use Ramsey\Uuid\Uuid;
 
 class UploadController
 {
-    private $Imagedirectory = __DIR__ . '/../../images'; // путь к директории с изображениями
+    private $Imagedirectory = __DIR__ . '/../../public/images'; // путь к директории с изображениями
 
     public function showPage($response, $request)
     {

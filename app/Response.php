@@ -1,5 +1,5 @@
 <?php
-namespace Imagenator\Main;
+namespace App\Imagenator;
 
 class Response extends View
 {

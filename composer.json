@@ -5,7 +5,8 @@
     "license": "no",
     "autoload": {
         "psr-4": {
-            "Imagenator\\Main\\": "src"
+            "Imagenator\\Main\\": "src",
+            "App\\Imagenator\\": "app"
         }
     },
     "authors": [

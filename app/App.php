@@ -1,6 +1,7 @@
 <?php
-namespace Imagenator\Main;
-use Imagenator\Main\Router;
+namespace App\Imagenator;
+
+use App\Imagenator\Router;
 use Ramsey\Uuid\Uuid;
 
 class App

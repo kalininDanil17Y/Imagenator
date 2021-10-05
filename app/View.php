@@ -1,7 +1,6 @@
 <?php
+namespace App\Imagenator;
 
-
-namespace Imagenator\Main;
 use Twig\Loader\FilesystemLoader;
 use \Twig\Environment;
 
@@ -11,7 +10,7 @@ class View
 
     public function viewInit()
     {
-        $loader = new FilesystemLoader(__DIR__ . '/Views/');
+        $loader = new FilesystemLoader(__DIR__ . '/../templates/');
         $this->twig = new Environment($loader);
     }
 
