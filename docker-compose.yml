@@ -10,7 +10,6 @@ services:
       - ./nginx/log:/var/log/nginx
     links:
       - php
-
   php:
     image: php:7.4-fpm-alpine
     volumes:
