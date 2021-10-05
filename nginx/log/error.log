@@ -1,0 +1,450 @@
+2021/10/05 12:55:02 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 12:55:02 [notice] 30#30: gracefully shutting down
+2021/10/05 12:55:02 [notice] 31#31: gracefully shutting down
+2021/10/05 12:55:02 [notice] 33#33: gracefully shutting down
+2021/10/05 12:55:02 [notice] 33#33: exiting
+2021/10/05 12:55:02 [notice] 32#32: gracefully shutting down
+2021/10/05 12:55:02 [notice] 30#30: exiting
+2021/10/05 12:55:02 [notice] 31#31: exiting
+2021/10/05 12:55:02 [notice] 33#33: exit
+2021/10/05 12:55:02 [notice] 32#32: exiting
+2021/10/05 12:55:02 [notice] 30#30: exit
+2021/10/05 12:55:02 [notice] 31#31: exit
+2021/10/05 12:55:02 [notice] 32#32: exit
+2021/10/05 12:55:02 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2021/10/05 12:55:02 [notice] 1#1: worker process 30 exited with code 0
+2021/10/05 12:55:02 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 12:55:02 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 12:55:02 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 12:55:02 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 12:55:02 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 12:55:02 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 12:55:02 [notice] 1#1: exit
+2021/10/05 12:55:08 [notice] 1#1: using the "epoll" event method
+2021/10/05 12:55:08 [notice] 1#1: nginx/1.21.3
+2021/10/05 12:55:08 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 12:55:08 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 12:55:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 12:55:08 [notice] 1#1: start worker processes
+2021/10/05 12:55:08 [notice] 1#1: start worker process 31
+2021/10/05 12:55:08 [notice] 1#1: start worker process 32
+2021/10/05 12:55:08 [notice] 1#1: start worker process 33
+2021/10/05 12:55:08 [notice] 1#1: start worker process 34
+2021/10/05 12:55:11 [error] 32#32: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: php-docker.local, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 12:57:52 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 12:57:52 [notice] 32#32: gracefully shutting down
+2021/10/05 12:57:52 [notice] 31#31: gracefully shutting down
+2021/10/05 12:57:52 [notice] 33#33: gracefully shutting down
+2021/10/05 12:57:52 [notice] 34#34: gracefully shutting down
+2021/10/05 12:57:52 [notice] 32#32: exiting
+2021/10/05 12:57:52 [notice] 31#31: exiting
+2021/10/05 12:57:52 [notice] 33#33: exiting
+2021/10/05 12:57:52 [notice] 34#34: exiting
+2021/10/05 12:57:52 [notice] 32#32: exit
+2021/10/05 12:57:52 [notice] 31#31: exit
+2021/10/05 12:57:52 [notice] 33#33: exit
+2021/10/05 12:57:52 [notice] 34#34: exit
+2021/10/05 12:57:52 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/10/05 12:57:52 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 12:57:52 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 12:57:52 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 12:57:52 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 12:57:52 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/10/05 12:57:52 [notice] 1#1: worker process 34 exited with code 0
+2021/10/05 12:57:52 [notice] 1#1: exit
+2021/10/05 12:58:01 [notice] 1#1: using the "epoll" event method
+2021/10/05 12:58:01 [notice] 1#1: nginx/1.21.3
+2021/10/05 12:58:01 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 12:58:01 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 12:58:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 12:58:01 [notice] 1#1: start worker processes
+2021/10/05 12:58:01 [notice] 1#1: start worker process 31
+2021/10/05 12:58:01 [notice] 1#1: start worker process 32
+2021/10/05 12:58:01 [notice] 1#1: start worker process 33
+2021/10/05 12:58:01 [notice] 1#1: start worker process 34
+2021/10/05 12:58:04 [error] 31#31: *2 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 12:59:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 12:59:56 [notice] 31#31: gracefully shutting down
+2021/10/05 12:59:56 [notice] 32#32: gracefully shutting down
+2021/10/05 12:59:56 [notice] 33#33: gracefully shutting down
+2021/10/05 12:59:56 [notice] 34#34: gracefully shutting down
+2021/10/05 12:59:56 [notice] 34#34: exiting
+2021/10/05 12:59:56 [notice] 31#31: exiting
+2021/10/05 12:59:56 [notice] 32#32: exiting
+2021/10/05 12:59:56 [notice] 33#33: exiting
+2021/10/05 12:59:56 [notice] 34#34: exit
+2021/10/05 12:59:56 [notice] 31#31: exit
+2021/10/05 12:59:56 [notice] 32#32: exit
+2021/10/05 12:59:56 [notice] 33#33: exit
+2021/10/05 12:59:56 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 12:59:56 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 12:59:56 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 12:59:56 [notice] 1#1: worker process 34 exited with code 0
+2021/10/05 12:59:56 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 12:59:56 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 12:59:56 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 12:59:56 [notice] 1#1: exit
+2021/10/05 13:00:02 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:00:02 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:00:02 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:00:02 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:00:02 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:00:02 [notice] 1#1: start worker processes
+2021/10/05 13:00:02 [notice] 1#1: start worker process 31
+2021/10/05 13:00:02 [notice] 1#1: start worker process 32
+2021/10/05 13:00:02 [notice] 1#1: start worker process 33
+2021/10/05 13:00:02 [notice] 1#1: start worker process 34
+2021/10/05 13:00:03 [error] 31#31: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "localhost"
+2021/10/05 13:00:19 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:00:19 [notice] 31#31: gracefully shutting down
+2021/10/05 13:00:19 [notice] 33#33: gracefully shutting down
+2021/10/05 13:00:19 [notice] 32#32: gracefully shutting down
+2021/10/05 13:00:19 [notice] 32#32: exiting
+2021/10/05 13:00:19 [notice] 34#34: gracefully shutting down
+2021/10/05 13:00:19 [notice] 31#31: exiting
+2021/10/05 13:00:19 [notice] 31#31: exit
+2021/10/05 13:00:19 [notice] 33#33: exiting
+2021/10/05 13:00:19 [notice] 32#32: exit
+2021/10/05 13:00:19 [notice] 34#34: exiting
+2021/10/05 13:00:19 [notice] 33#33: exit
+2021/10/05 13:00:19 [notice] 34#34: exit
+2021/10/05 13:00:19 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:00:19 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:00:19 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:00:19 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:00:19 [notice] 1#1: worker process 34 exited with code 0
+2021/10/05 13:00:19 [notice] 1#1: exit
+2021/10/05 13:00:24 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:00:24 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:00:24 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:00:24 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:00:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:00:24 [notice] 1#1: start worker processes
+2021/10/05 13:00:24 [notice] 1#1: start worker process 30
+2021/10/05 13:00:24 [notice] 1#1: start worker process 31
+2021/10/05 13:00:24 [notice] 1#1: start worker process 32
+2021/10/05 13:00:24 [notice] 1#1: start worker process 33
+2021/10/05 13:00:26 [error] 31#31: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "localhost"
+2021/10/05 13:00:27 [error] 30#30: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "localhost"
+2021/10/05 13:00:28 [error] 30#30: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "localhost"
+2021/10/05 13:01:21 [error] 30#30: *8 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "localhost"
+2021/10/05 13:01:26 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:01:26 [notice] 30#30: gracefully shutting down
+2021/10/05 13:01:26 [notice] 31#31: gracefully shutting down
+2021/10/05 13:01:26 [notice] 32#32: gracefully shutting down
+2021/10/05 13:01:26 [notice] 33#33: gracefully shutting down
+2021/10/05 13:01:26 [notice] 30#30: exiting
+2021/10/05 13:01:26 [notice] 30#30: exit
+2021/10/05 13:01:26 [notice] 31#31: exiting
+2021/10/05 13:01:26 [notice] 31#31: exit
+2021/10/05 13:01:26 [notice] 32#32: exiting
+2021/10/05 13:01:26 [notice] 33#33: exiting
+2021/10/05 13:01:26 [notice] 32#32: exit
+2021/10/05 13:01:26 [notice] 33#33: exit
+2021/10/05 13:01:26 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/10/05 13:01:26 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:01:26 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:01:26 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2021/10/05 13:01:26 [notice] 1#1: worker process 30 exited with code 0
+2021/10/05 13:01:26 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:01:26 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 13:01:26 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:01:26 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:01:26 [notice] 1#1: exit
+2021/10/05 13:01:33 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:01:33 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:01:33 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:01:33 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:01:33 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:01:33 [notice] 1#1: start worker processes
+2021/10/05 13:01:33 [notice] 1#1: start worker process 31
+2021/10/05 13:01:33 [notice] 1#1: start worker process 32
+2021/10/05 13:01:33 [notice] 1#1: start worker process 33
+2021/10/05 13:01:33 [notice] 1#1: start worker process 34
+2021/10/05 13:01:35 [error] 32#32: *2 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 13:01:36 [error] 31#31: *4 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 13:02:28 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:02:28 [notice] 31#31: gracefully shutting down
+2021/10/05 13:02:28 [notice] 32#32: gracefully shutting down
+2021/10/05 13:02:28 [notice] 33#33: gracefully shutting down
+2021/10/05 13:02:28 [notice] 34#34: gracefully shutting down
+2021/10/05 13:02:28 [notice] 31#31: exiting
+2021/10/05 13:02:28 [notice] 32#32: exiting
+2021/10/05 13:02:28 [notice] 33#33: exiting
+2021/10/05 13:02:28 [notice] 34#34: exiting
+2021/10/05 13:02:28 [notice] 31#31: exit
+2021/10/05 13:02:28 [notice] 32#32: exit
+2021/10/05 13:02:28 [notice] 33#33: exit
+2021/10/05 13:02:28 [notice] 34#34: exit
+2021/10/05 13:02:28 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 13:02:28 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:02:28 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:02:28 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:02:28 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/10/05 13:02:28 [notice] 1#1: worker process 34 exited with code 0
+2021/10/05 13:02:28 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:02:28 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:02:28 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:02:28 [notice] 1#1: exit
+2021/10/05 13:02:37 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:02:37 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:02:37 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:02:37 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:02:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:02:37 [notice] 1#1: start worker processes
+2021/10/05 13:02:37 [notice] 1#1: start worker process 31
+2021/10/05 13:02:37 [notice] 1#1: start worker process 32
+2021/10/05 13:02:37 [notice] 1#1: start worker process 33
+2021/10/05 13:02:37 [notice] 1#1: start worker process 34
+2021/10/05 13:02:38 [error] 31#31: *2 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 13:02:39 [error] 31#31: *2 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 13:02:45 [error] 31#31: *2 directory index of "/usr/share/nginx/html/css/" is forbidden, client: 172.18.0.1, server: localhost, request: "GET /css/ HTTP/1.1", host: "localhost"
+2021/10/05 13:02:50 [error] 31#31: *6 "/usr/share/nginx/html/css2/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /css2/ HTTP/1.1", host: "localhost"
+2021/10/05 13:03:06 [error] 31#31: *8 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 13:05:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:05:47 [notice] 31#31: gracefully shutting down
+2021/10/05 13:05:47 [notice] 34#34: gracefully shutting down
+2021/10/05 13:05:47 [notice] 33#33: gracefully shutting down
+2021/10/05 13:05:47 [notice] 32#32: gracefully shutting down
+2021/10/05 13:05:47 [notice] 31#31: exiting
+2021/10/05 13:05:47 [notice] 34#34: exiting
+2021/10/05 13:05:47 [notice] 33#33: exiting
+2021/10/05 13:05:47 [notice] 33#33: exit
+2021/10/05 13:05:47 [notice] 32#32: exiting
+2021/10/05 13:05:47 [notice] 31#31: exit
+2021/10/05 13:05:47 [notice] 34#34: exit
+2021/10/05 13:05:47 [notice] 32#32: exit
+2021/10/05 13:05:47 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:05:47 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:05:47 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:05:47 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 13:05:47 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:05:47 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:05:47 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/10/05 13:05:47 [notice] 1#1: worker process 34 exited with code 0
+2021/10/05 13:05:47 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:05:47 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/10/05 13:05:47 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:05:47 [notice] 1#1: exit
+2021/10/05 13:05:52 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:05:52 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:05:52 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:05:52 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:05:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:05:52 [notice] 1#1: start worker processes
+2021/10/05 13:05:52 [notice] 1#1: start worker process 30
+2021/10/05 13:05:52 [notice] 1#1: start worker process 31
+2021/10/05 13:05:52 [notice] 1#1: start worker process 32
+2021/10/05 13:05:52 [notice] 1#1: start worker process 33
+2021/10/05 13:05:55 [error] 30#30: *2 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 13:07:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:07:47 [notice] 30#30: gracefully shutting down
+2021/10/05 13:07:47 [notice] 32#32: gracefully shutting down
+2021/10/05 13:07:47 [notice] 31#31: gracefully shutting down
+2021/10/05 13:07:47 [notice] 33#33: gracefully shutting down
+2021/10/05 13:07:47 [notice] 30#30: exiting
+2021/10/05 13:07:47 [notice] 32#32: exiting
+2021/10/05 13:07:47 [notice] 32#32: exit
+2021/10/05 13:07:47 [notice] 31#31: exiting
+2021/10/05 13:07:47 [notice] 33#33: exiting
+2021/10/05 13:07:47 [notice] 30#30: exit
+2021/10/05 13:07:47 [notice] 31#31: exit
+2021/10/05 13:07:47 [notice] 33#33: exit
+2021/10/05 13:07:47 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:07:47 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:07:47 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:07:47 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/10/05 13:07:47 [notice] 1#1: worker process 30 exited with code 0
+2021/10/05 13:07:47 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:07:47 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:07:47 [notice] 1#1: exit
+2021/10/05 13:07:57 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:07:57 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:07:57 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:07:57 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:07:57 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:07:57 [notice] 1#1: start worker processes
+2021/10/05 13:07:57 [notice] 1#1: start worker process 30
+2021/10/05 13:07:57 [notice] 1#1: start worker process 31
+2021/10/05 13:07:57 [notice] 1#1: start worker process 32
+2021/10/05 13:07:57 [notice] 1#1: start worker process 33
+2021/10/05 13:09:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:09:56 [notice] 30#30: gracefully shutting down
+2021/10/05 13:09:56 [notice] 33#33: gracefully shutting down
+2021/10/05 13:09:56 [notice] 31#31: gracefully shutting down
+2021/10/05 13:09:56 [notice] 32#32: gracefully shutting down
+2021/10/05 13:09:56 [notice] 30#30: exiting
+2021/10/05 13:09:56 [notice] 33#33: exiting
+2021/10/05 13:09:56 [notice] 31#31: exiting
+2021/10/05 13:09:56 [notice] 32#32: exiting
+2021/10/05 13:09:56 [notice] 30#30: exit
+2021/10/05 13:09:56 [notice] 33#33: exit
+2021/10/05 13:09:56 [notice] 31#31: exit
+2021/10/05 13:09:56 [notice] 32#32: exit
+2021/10/05 13:09:56 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2021/10/05 13:09:56 [notice] 1#1: worker process 30 exited with code 0
+2021/10/05 13:09:56 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:09:56 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:09:56 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 13:09:56 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:09:56 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:09:56 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:09:56 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:09:56 [notice] 1#1: exit
+2021/10/05 13:10:05 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:10:05 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:10:05 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:10:05 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:10:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:10:05 [notice] 1#1: start worker processes
+2021/10/05 13:10:05 [notice] 1#1: start worker process 30
+2021/10/05 13:10:05 [notice] 1#1: start worker process 31
+2021/10/05 13:10:05 [notice] 1#1: start worker process 32
+2021/10/05 13:10:05 [notice] 1#1: start worker process 33
+2021/10/05 13:16:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:16:56 [notice] 31#31: gracefully shutting down
+2021/10/05 13:16:56 [notice] 30#30: gracefully shutting down
+2021/10/05 13:16:56 [notice] 33#33: gracefully shutting down
+2021/10/05 13:16:56 [notice] 32#32: gracefully shutting down
+2021/10/05 13:16:56 [notice] 31#31: exiting
+2021/10/05 13:16:56 [notice] 30#30: exiting
+2021/10/05 13:16:56 [notice] 33#33: exiting
+2021/10/05 13:16:56 [notice] 32#32: exiting
+2021/10/05 13:16:56 [notice] 31#31: exit
+2021/10/05 13:16:56 [notice] 30#30: exit
+2021/10/05 13:16:56 [notice] 33#33: exit
+2021/10/05 13:16:56 [notice] 32#32: exit
+2021/10/05 13:16:56 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 13:16:56 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:16:56 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:16:56 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2021/10/05 13:16:56 [notice] 1#1: worker process 30 exited with code 0
+2021/10/05 13:16:56 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:16:56 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:16:56 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:16:56 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:16:56 [notice] 1#1: exit
+2021/10/05 13:17:05 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:17:05 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:17:05 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:17:05 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:17:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:17:05 [notice] 1#1: start worker processes
+2021/10/05 13:17:05 [notice] 1#1: start worker process 31
+2021/10/05 13:17:05 [notice] 1#1: start worker process 32
+2021/10/05 13:17:05 [notice] 1#1: start worker process 33
+2021/10/05 13:17:05 [notice] 1#1: start worker process 34
+2021/10/05 13:17:06 [error] 31#31: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 13:17:07 [error] 31#31: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2021/10/05 13:17:22 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:17:22 [notice] 31#31: gracefully shutting down
+2021/10/05 13:17:22 [notice] 32#32: gracefully shutting down
+2021/10/05 13:17:22 [notice] 33#33: gracefully shutting down
+2021/10/05 13:17:22 [notice] 34#34: gracefully shutting down
+2021/10/05 13:17:22 [notice] 31#31: exiting
+2021/10/05 13:17:22 [notice] 32#32: exiting
+2021/10/05 13:17:22 [notice] 33#33: exiting
+2021/10/05 13:17:22 [notice] 34#34: exiting
+2021/10/05 13:17:22 [notice] 31#31: exit
+2021/10/05 13:17:22 [notice] 32#32: exit
+2021/10/05 13:17:22 [notice] 33#33: exit
+2021/10/05 13:17:22 [notice] 34#34: exit
+2021/10/05 13:17:22 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/10/05 13:17:22 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:17:22 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:17:22 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 13:17:22 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:17:22 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:17:22 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:17:22 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:17:22 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/10/05 13:17:22 [notice] 1#1: worker process 34 exited with code 0
+2021/10/05 13:17:22 [notice] 1#1: exit
+2021/10/05 13:17:29 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:17:29 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:17:29 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:17:29 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:17:29 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:17:29 [notice] 1#1: start worker processes
+2021/10/05 13:17:29 [notice] 1#1: start worker process 31
+2021/10/05 13:17:29 [notice] 1#1: start worker process 32
+2021/10/05 13:17:29 [notice] 1#1: start worker process 33
+2021/10/05 13:17:29 [notice] 1#1: start worker process 34
+2021/10/05 13:21:38 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:21:38 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:21:38 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:21:38 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:21:38 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:21:38 [notice] 1#1: start worker processes
+2021/10/05 13:21:38 [notice] 1#1: start worker process 31
+2021/10/05 13:21:38 [notice] 1#1: start worker process 32
+2021/10/05 13:21:38 [notice] 1#1: start worker process 33
+2021/10/05 13:21:38 [notice] 1#1: start worker process 34
+2021/10/05 13:21:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:21:53 [notice] 32#32: gracefully shutting down
+2021/10/05 13:21:53 [notice] 34#34: gracefully shutting down
+2021/10/05 13:21:53 [notice] 33#33: gracefully shutting down
+2021/10/05 13:21:53 [notice] 31#31: gracefully shutting down
+2021/10/05 13:21:53 [notice] 32#32: exiting
+2021/10/05 13:21:53 [notice] 34#34: exiting
+2021/10/05 13:21:53 [notice] 33#33: exiting
+2021/10/05 13:21:53 [notice] 31#31: exiting
+2021/10/05 13:21:53 [notice] 32#32: exit
+2021/10/05 13:21:53 [notice] 34#34: exit
+2021/10/05 13:21:53 [notice] 33#33: exit
+2021/10/05 13:21:53 [notice] 31#31: exit
+2021/10/05 13:21:53 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/10/05 13:21:53 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:21:53 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:21:53 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:21:53 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:21:53 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 13:21:53 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:21:53 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:21:53 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/10/05 13:21:53 [notice] 1#1: worker process 34 exited with code 0
+2021/10/05 13:21:53 [notice] 1#1: exit
+2021/10/05 13:22:00 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:22:00 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:22:00 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:22:00 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:22:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:22:00 [notice] 1#1: start worker processes
+2021/10/05 13:22:00 [notice] 1#1: start worker process 31
+2021/10/05 13:22:00 [notice] 1#1: start worker process 32
+2021/10/05 13:22:00 [notice] 1#1: start worker process 33
+2021/10/05 13:22:00 [notice] 1#1: start worker process 34
+2021/10/05 13:22:04 [error] 31#31: *2 open() "/usr/share/nginx/html/public/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/10/05 13:26:38 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/10/05 13:26:38 [notice] 31#31: gracefully shutting down
+2021/10/05 13:26:38 [notice] 33#33: gracefully shutting down
+2021/10/05 13:26:38 [notice] 34#34: gracefully shutting down
+2021/10/05 13:26:38 [notice] 32#32: gracefully shutting down
+2021/10/05 13:26:38 [notice] 31#31: exiting
+2021/10/05 13:26:38 [notice] 31#31: exit
+2021/10/05 13:26:38 [notice] 33#33: exiting
+2021/10/05 13:26:38 [notice] 34#34: exiting
+2021/10/05 13:26:38 [notice] 32#32: exiting
+2021/10/05 13:26:38 [notice] 33#33: exit
+2021/10/05 13:26:38 [notice] 34#34: exit
+2021/10/05 13:26:38 [notice] 32#32: exit
+2021/10/05 13:26:39 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/10/05 13:26:39 [notice] 1#1: worker process 33 exited with code 0
+2021/10/05 13:26:39 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:26:39 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/10/05 13:26:39 [notice] 1#1: worker process 31 exited with code 0
+2021/10/05 13:26:39 [notice] 1#1: worker process 32 exited with code 0
+2021/10/05 13:26:39 [notice] 1#1: signal 29 (SIGIO) received
+2021/10/05 13:26:39 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/10/05 13:26:39 [notice] 1#1: worker process 34 exited with code 0
+2021/10/05 13:26:39 [notice] 1#1: exit
+2021/10/05 13:26:41 [notice] 1#1: using the "epoll" event method
+2021/10/05 13:26:41 [notice] 1#1: nginx/1.21.3
+2021/10/05 13:26:41 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/05 13:26:41 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2021/10/05 13:26:41 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/05 13:26:41 [notice] 1#1: start worker processes
+2021/10/05 13:26:41 [notice] 1#1: start worker process 31
+2021/10/05 13:26:41 [notice] 1#1: start worker process 32
+2021/10/05 13:26:41 [notice] 1#1: start worker process 33
+2021/10/05 13:26:41 [notice] 1#1: start worker process 34
