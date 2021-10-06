@@ -23,7 +23,10 @@ class UploadController
     {
         $images = Images::orderBy('dateUploaded', 'DESC')->get();
 
-        return $response->view("imagenator/show", ['images' => $images]);
+        return $response->view("imagenator/show", [
+            'images' => $images,
+            "userIp" => $request->getClientIp()
+        ]);
     }
 
     /**
