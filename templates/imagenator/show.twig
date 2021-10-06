@@ -91,12 +91,37 @@
             </div>
 
             {% for image in images %}
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter my">
-                <img src="/images/{{ image['name'] }}" class="img-responsive" alt="" title="{{ image['uuid'] }}">
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter {% if image['ipAddress'] == userIp %}my{% endif %}">
+                <a href="/images/{{ image['name'] }}"><img src="/images/{{ image['name'] }}" class="img-responsive" alt="" title="{{ image['uuid'] }}"></a>
             </div>
             {% endfor %}
 
         </div>
     </div>
+<script>
+    $(document).ready(function(){
+
+        $(".filter-button").click(function(){
+            var value = $(this).attr('data-filter');
+
+            if(value == "all")
+            {
+                $('.filter').show('1000');
+            }
+            else
+            {
+                $(".filter").not('.'+value).hide('3000');
+                $('.filter').filter('.'+value).show('3000');
+
+            }
+        });
+
+        if ($(".filter-button").removeClass("active")) {
+            $(this).removeClass("active");
+        }
+        $(this).addClass("active");
+
+    });
+</script>
 </body>
 </html>
