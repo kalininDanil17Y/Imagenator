@@ -90,9 +90,9 @@
                 <button class="btn btn-default filter-button" data-filter="my">Мои</button>
             </div>
 
-            {% for image, ext in images %}
+            {% for image in images %}
             <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter my">
-                <img src="/images/{{ image }}" class="img-responsive" alt="" title="{{ ext }}">
+                <img src="/images/{{ image['name'] }}" class="img-responsive" alt="" title="{{ image['uuid'] }}">
             </div>
             {% endfor %}
 

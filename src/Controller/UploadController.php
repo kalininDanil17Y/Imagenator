@@ -21,25 +21,7 @@ class UploadController
      */
     public function showPage($response, $request)
     {
-        $allowed_types = ['png', 'jpg', 'jpeg']; // показывать расширения
-        $images = [];
-        $i = 0;
-        //пробуем открыть папку
-        $dir_handle = @opendir($this->Imagedirectory) or die("Ошибка при открытии папки !!!");
-        while ($file = readdir($dir_handle))
-        {
-            if($file == "." || $file == "..") continue;
-            $file_parts = explode(".",$file);
-            $ext = strtolower($file_parts[1]);
-
-            if(in_array($ext,$allowed_types))
-            {
-                $images[$file] = $file_parts[0];
-                $i++;
-            }
-
-        }
-        closedir($dir_handle);
+        $images = Images::orderBy('dateUploaded', 'DESC')->get();
 
         return $response->view("imagenator/show", ['images' => $images]);
     }
