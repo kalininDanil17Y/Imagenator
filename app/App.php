@@ -35,7 +35,6 @@ class App
             dump($uuid);
             dump($request);
 
-
         });
 
         $rout->Handle();
