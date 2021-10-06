@@ -14,6 +14,8 @@ services:
     image: php:7.4-fpm-alpine
     volumes:
       - ./:/usr/share/nginx/html
+    links:
+      - db
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password

@@ -33,11 +33,8 @@ class App
             }
             $uuid = Uuid::uuid4();
             dump($uuid);
-            dump($method);
-            dump($response);
             dump($request);
 
-            dump(Imagenator\Model\Images::all());
 
         });
 

@@ -1,6 +1,7 @@
 <?php
 namespace Imagenator\Controller;
 use Ramsey\Uuid\Uuid;
+use Imagenator\Models\Images;
 
 /**
  * Class UploadController
@@ -77,9 +78,19 @@ class UploadController
             return $response->setBody('error');
         }
 
-        $imageFullName = $this->Imagedirectory . "/" . $uuid->toString() . '.' . $imageFormat;
+        $imageName = $uuid->toString() . '.' . $imageFormat;
+        $imageFullName = $this->Imagedirectory . "/" . $imageName;
 
         if (move_uploaded_file($image->getPathname(), $imageFullName)) {
+            $image = Images::create([
+                'uuid' => $uuid,
+                'name' => $imageName,
+                'ipAddress' => $request->getClientIp()
+            ]);
+            if (empty($image)) {
+                unlink($imageFullName);
+                return $response->setBody('error');
+            }
             return $response->setBody(json_encode(['name' => $uuid->toString(), 'format' => $imageFormat]));
         }
         return $response->setBody('error');

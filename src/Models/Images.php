@@ -1,9 +1,11 @@
 <?php
-namespace Imagenator\Model;
+namespace Imagenator\Models;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class g extends Eloquent
+class Images extends Eloquent
 {
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
