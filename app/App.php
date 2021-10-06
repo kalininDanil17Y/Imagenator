@@ -2,6 +2,7 @@
 namespace App\Imagenator;
 
 use App\Imagenator\Router;
+use App\Imagenator\Database;
 use Ramsey\Uuid\Uuid;
 
 /**
@@ -13,6 +14,8 @@ class App
 
     public function init()
     {
+        new Database();
+
         $rout = new Router();
 
         $rout->addRoute('/', ['UploadController', 'showPage']);
@@ -33,6 +36,9 @@ class App
             dump($method);
             dump($response);
             dump($request);
+
+            dump(Imagenator\Model\Images::all());
+
         });
 
         $rout->Handle();

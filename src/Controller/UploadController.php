@@ -1,5 +1,5 @@
 <?php
-namespace Imagenator\Main\Controller;
+namespace Imagenator\Controller;
 use Ramsey\Uuid\Uuid;
 
 /**

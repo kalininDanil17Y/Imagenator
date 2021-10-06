@@ -14,3 +14,13 @@ services:
     image: php:7.4-fpm-alpine
     volumes:
       - ./:/usr/share/nginx/html
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80

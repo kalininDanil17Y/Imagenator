@@ -55,7 +55,7 @@ class Router extends View
         }
 
         if (gettype($routes[$this->request->getPathInfo()]) === "array") {
-            $class = 'Imagenator\Main\Controller\\' . $routes[$this->request->getPathInfo()][0];
+            $class = 'Imagenator\Controller\\' . $routes[$this->request->getPathInfo()][0];
             $controller = new $class();
             $response = $controller->{$routes[$this->request->getPathInfo()][1]}(new Response, $this->request);
         } else {
