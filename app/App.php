@@ -16,17 +16,17 @@ class App
     {
         new Database();
 
-        $rout = new Router();
+        $router = new Router();
 
-        $rout->addRoute('/', ['UploadController', 'showPage']);
-        $rout->addRoute('/upload', ['UploadController', 'uploadPage']);
-        $rout->addRoutePost('/upload', ['UploadController', 'upload']);
-        $rout->addRoutePost('/result', ['UploadController', 'resultPage']);
+        $router->addRoute('/', ['UploadController', 'showPage']);
+        $router->addRoute('/upload', ['UploadController', 'uploadPage']);
+        $router->addRoutePost('/upload', ['UploadController', 'upload']);
+        $router->addRoutePost('/result', ['UploadController', 'resultPage']);
 
-        $rout->addRoute('/form', ['FirstController', 'form']);
-        $rout->addRoutePost('/form', ['FirstController', 'post']);
-        $rout->addRoute('/blablabla', ['SecondController', 'blablabla']);
-        $rout->addRoute('/hellYeah', function ($response, $request){
+        $router->addRoute('/form', ['FirstController', 'form']);
+        $router->addRoutePost('/form', ['FirstController', 'post']);
+        $router->addRoute('/blablabla', ['SecondController', 'blablabla']);
+        $router->addRoute('/hellYeah', function ($response, $request){
             $method = $request->query->get('method', 'print');
             if ($method !== "print") {
                 return $response->redirect("https://google.com", 302);
@@ -37,6 +37,6 @@ class App
 
         });
 
-        $rout->Handle();
+        $router->Handle();
     }
 }
