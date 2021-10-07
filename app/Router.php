@@ -42,7 +42,6 @@ class Router extends View
      */
     public function Handle()
     {
-
         if ($this->method === "GET") {
             $routes = $this->routes;
         } else {
