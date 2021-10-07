@@ -24,6 +24,7 @@
         "twig/twig": "^3.0",
         "ramsey/uuid": "4.x-dev",
         "illuminate/database": "8.x-dev",
-        "vlucas/phpdotenv": "5.3.x-dev"
+        "vlucas/phpdotenv": "5.3.x-dev",
+        "robmorgan/phinx": "dev-master"
     }
 }
