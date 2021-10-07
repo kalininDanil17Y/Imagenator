@@ -3,3 +3,4 @@ vendor
 .env
 docker/nginx/log
 var
+public/images
