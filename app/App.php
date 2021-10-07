@@ -21,7 +21,7 @@ class App
         $rout->addRoute('/', ['UploadController', 'showPage']);
         $rout->addRoute('/upload', ['UploadController', 'uploadPage']);
         $rout->addRoutePost('/upload', ['UploadController', 'upload']);
-        $rout->addRoutePost('/result', ['UploadController', 'result']);
+        $rout->addRoutePost('/result', ['UploadController', 'resultPage']);
 
         $rout->addRoute('/form', ['FirstController', 'form']);
         $rout->addRoutePost('/form', ['FirstController', 'post']);

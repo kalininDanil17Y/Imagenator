@@ -21,7 +21,7 @@ class Database
             'host'      => 'localhost',
             'database'  => 'Imagenator',
             'username'  => 'root',
-            'password'  => 'you_pass',
+            'password'  => 'pass',
             'charset'   => 'utf8',
             'collation' => 'utf8_general_ci',
             'prefix'    => ''

@@ -82,8 +82,8 @@
 
 
         <div class="parent">
-            <div class="block">
-                <img id="upload" src="http://localhost/drop.jpg" alt=""/>
+            <div class="block upload">
+                <img class="upload" src="http://localhost/drop.jpg" alt=""/>
             </div>
             <form id="form"><input type="file" accept=".png, .jpg, .jpeg" id="uploadInput" name="image" style="display: none;" /></form>
         </div>
@@ -92,7 +92,7 @@
 </div>
 <script>
     $(document).ready(function(){
-        $("#upload").click(function() {
+        $(".upload").click(function() {
             $("input[id='uploadInput']").click();
         });
 

@@ -54,7 +54,7 @@ class Router extends View
             die;
         }
 
-        if (gettype($routes[$this->request->getPathInfo()]) === "array") {
+        if (is_array($routes[$this->request->getPathInfo()])) {
             $class = 'Imagenator\Controller\\' . $routes[$this->request->getPathInfo()][0];
             $controller = new $class();
             $response = $controller->{$routes[$this->request->getPathInfo()][1]}(new Response, $this->request);

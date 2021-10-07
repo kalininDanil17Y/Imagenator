@@ -6,12 +6,12 @@ services:
       - 80:80
     volumes:
       - ./:/usr/share/nginx/html
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx/log:/var/log/nginx
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/nginx/log:/var/log/nginx
     links:
       - php
   php:
-    image: php:7.4-fpm-alpine
+    build: ./docker/php/
     volumes:
       - ./:/usr/share/nginx/html
     links:

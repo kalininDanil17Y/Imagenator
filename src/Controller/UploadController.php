@@ -51,7 +51,7 @@ class UploadController
         $image = $request->files->get('image');
 
 
-        if ($image->getSize() > 200000) {
+        if ($image->getSize() > 4194304 /* filesize > 4mb */) {
             return $response->setBody('error');
         }
 
@@ -86,7 +86,7 @@ class UploadController
      * @param $request
      * @return mixed
      */
-    public function result($response, $request)
+    public function resultPage($response, $request)
     {
         $name = $request->request->get('name');
         $format = $request->request->get('format');
