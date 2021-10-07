@@ -4,6 +4,7 @@ namespace App\Imagenator;
 use App\Imagenator\Router;
 use App\Imagenator\Database;
 use Ramsey\Uuid\Uuid;
+use Dotenv\Dotenv;
 
 /**
  * Class App
@@ -14,6 +15,9 @@ class App
 
     public function init()
     {
+        $dotenv = Dotenv::createImmutable(__DIR__ . "/../");
+        $dotenv->load();
+
         new Database();
 
         $router = new Router();
@@ -34,6 +38,7 @@ class App
             $uuid = Uuid::uuid4();
             dump($uuid);
             dump($request);
+            dump($_ENV);
 
         });
 

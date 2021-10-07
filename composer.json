@@ -23,6 +23,7 @@
         "symfony/http-foundation": "5.4.x-dev",
         "twig/twig": "^3.0",
         "ramsey/uuid": "4.x-dev",
-        "illuminate/database": "8.x-dev"
+        "illuminate/database": "8.x-dev",
+        "vlucas/phpdotenv": "5.3.x-dev"
     }
 }
