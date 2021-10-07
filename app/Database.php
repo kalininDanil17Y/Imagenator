@@ -18,10 +18,10 @@ class Database
         $capsule = new Capsule();
         $capsule->addConnection([
             'driver'    => 'mysql',
-            'host'      => 'db',
-            'database'  => 'Imagenator',
-            'username'  => 'root',
-            'password'  => 'pass',
+            'host'      => $_ENV['MYSQL_HOST'],
+            'database'  => $_ENV['MYSQL_DBNAME'],
+            'username'  => $_ENV['MYSQL_USER'],
+            'password'  => $_ENV['MYSQL_PASS'],
             'charset'   => 'utf8',
             'collation' => 'utf8_general_ci',
             'prefix'    => ''
