@@ -28,14 +28,5 @@ class Database
         ]);
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
-
-        if(!Capsule::schema()->hasTable('images')){
-            Capsule::schema()->create('images', function (Blueprint $table) {
-                $table->char('uuid', 80)->unique();
-                $table->char('name', 90);
-                $table->dateTime('dateUploaded')->useCurrent();
-                $table->char('ipAddress', 25);
-            });
-        }
     }
 }
