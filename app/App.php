@@ -48,6 +48,6 @@ class App
 
         });
 
-        $router->Handle();
+        $router->start();
     }
 }

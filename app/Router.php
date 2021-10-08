@@ -41,7 +41,7 @@ class Router extends View
     /**
      *
      */
-    public function Handle()
+    public function start()
     {
         if ($this->method === "GET") {
             $routes = $this->routes;
@@ -49,18 +49,22 @@ class Router extends View
             $routes = $this->routesPost;
         }
 
-        if (empty($routes[$this->request->getPathInfo()])) {
+        $thisPath = $this->request->getPathInfo();
+        $controller = $routes[$thisPath];
+
+        if (empty($controller)) {
             echo $this->buildTemplate('errors/404');
             die;
         }
 
-        if (is_array($routes[$this->request->getPathInfo()])) {
-            $class = 'Imagenator\Controller\\' . $routes[$this->request->getPathInfo()][0];
-            $controller = new $class();
-            $response = $controller->{$routes[$this->request->getPathInfo()][1]}(new Response, $this->request);
+
+        if (is_array($controller)) {
+            [$className, $funcName] = $controller;
+            $classPath = 'Imagenator\Controller\\' . $className;
+            $class = new $classPath;
+            $response = $class->{$funcName}(new Response, $this->request);
         } else {
-            $func = $routes[$this->request->getPathInfo()];
-            $response = $func(new Response, $this->request);
+            $response = $controller(new Response, $this->request);
         }
         if (!empty($response)) {
             $response = $response->end();
