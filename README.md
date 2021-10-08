@@ -50,7 +50,7 @@
 ```
 либо анонимные функции
 ```php
-  $router->addRoute('GET', '/', function ($response, $request){/*some code*/});
+  $router->addRoute('POST', '/', function ($response, $request){/*some code*/});
 ```
 В контроллер передаются два параметра <code>$response</code> и <code>$request</code>
 
