@@ -17,10 +17,10 @@ class View
     private $twig;
 
     /**
-     * @param $string
-     * @return array|mixed
+     * @param string $string
+     * @return array|string
      */
-    public static function _text($string){
+    public static function _text(string $string = ''){
         $words = explode(".", $string);
         $langFile = __DIR__ . "/../translations/" . $words[0] . ".php";
         if (!file_exists($langFile)) {

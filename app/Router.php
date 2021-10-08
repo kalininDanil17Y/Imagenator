@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace App\Imagenator;
 
 use App\Imagenator\Response;
@@ -68,20 +69,16 @@ class Router extends View
     }
 
     /**
+     * @param string $method
      * @param string $route
      * @param $controller
      */
-    public function addRoute(string $route, $controller)
+    public function addRoute(string $method = "GET", string $route, $controller)
     {
-        $this->routes[$route] = $controller;
-    }
-
-    /**
-     * @param string $route
-     * @param $controller
-     */
-    public function addRoutePost(string $route, $controller)
-    {
-        $this->routesPost[$route] = $controller;
+        if ($method === "GET") {
+            $this->routes[$route] = $controller;
+        } else {
+            $this->routesPost[$route] = $controller;
+        }
     }
 }

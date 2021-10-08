@@ -15,6 +15,10 @@ class Database
      */
     public function __construct()
     {
+    }
+
+    function connect()
+    {
         $capsule = new Capsule();
         $capsule->addConnection([
             'driver'    => 'mysql',
