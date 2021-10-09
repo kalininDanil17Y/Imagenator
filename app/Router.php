@@ -63,6 +63,8 @@ class Router extends View
             $classPath = 'Imagenator\Controller\\' . $className;
             $class = new $classPath;
             $response = $class->{$funcName}(new Response, $this->request);
+        } else if (is_string($controller)) {
+            $response = $controller();
         } else {
             $response = $controller(new Response, $this->request);
         }
