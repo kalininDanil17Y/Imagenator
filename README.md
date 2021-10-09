@@ -46,7 +46,7 @@
 ```
 Для небольших страниц можно использовать функции вместо контроллера, пример
 ```php
-  $router->addRoute('GET', '/', function MyFunc($response, $request));
+  $router->addRoute('GET', '/', 'MyFunc');
 ```
 либо анонимные функции
 ```php
