@@ -127,4 +127,8 @@ public function page($response, $request)
 ---
 ### 1.6 Миграции
 Директория с миграциями <code>/src/Migrations/</code>
-Документация по настройке [тут](https://book.cakephp.org/phinx/0/en/index.html)
+Документация по настройке [тут](https://book.cakephp.org/phinx/0/en/index.html)<br>
+Команда для создания миграции<br>
+<code>php vendor/bin/phinx create MyMigration</code><br>
+Запустить миграцию<br>
+<code>php vendor/bin/phinx migrate</code>
