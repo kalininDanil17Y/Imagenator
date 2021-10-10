@@ -1,6 +1,9 @@
 <?php
 namespace Imagenator\Controller;
 
+use phpDocumentor\Reflection\Types\Boolean;
+use PhpParser\Node\Expr\Cast\Object_;
+
 /**
  * Class FirstController
  * @package Imagenator\Main\Controller
@@ -29,5 +32,20 @@ class FirstController
         $name = $request->request->get('name');
         return $response->view('index', ['name' => $name])
             ->setStatus(202);
+    }
+}
+
+class I{
+    public function isStudy(): bool
+    {
+        return true;
+    }
+    public function isWorking(): bool
+    {
+        return true;
+    }
+    public function happy()
+    {
+
     }
 }

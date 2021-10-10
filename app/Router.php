@@ -50,12 +50,13 @@ class Router extends View
         }
 
         $thisPath = $this->request->getPathInfo();
-        $controller = $routes[$thisPath];
 
-        if (empty($controller)) {
+        if (!array_key_exists($thisPath, $routes)) {
             echo $this->buildTemplate('errors/404');
             die;
         }
+
+        $controller = $routes[$thisPath];
 
 
         if (is_array($controller)) {
