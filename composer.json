@@ -2,7 +2,7 @@
     "name": "imagenator/start",
     "description": "Image",
     "type": "project",
-    "license": "no",
+    "license": "yes",
     "autoload": {
         "psr-4": {
             "Imagenator\\": "src",
