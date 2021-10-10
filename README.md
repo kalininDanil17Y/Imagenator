@@ -5,7 +5,7 @@
 ## Установка и Автозагрузка
 
 Этот пакет сопровождается файлом [composer.json](./composer.json), что позволяет использовать 
-[Composer](https://getcomposer.org/) для его инсталляции и автозагрузки.
+[Composer](https://getcomposer.org/) для его инсталляции и автозагрузки <code>composer create-project imagenator/start</code>
 
 Так же можно установить его загрузив [исходные коды](https://github.com/kalininDanil17Y/Imagenator/archive/refs/heads/main.zip) пакета в виде Zip архива 
 или клонировав этот репозиторий. Все компоненты этого пакета загружают 
