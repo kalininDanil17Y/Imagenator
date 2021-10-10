@@ -1,6 +1,6 @@
 {
     "name": "imagenator/start",
-    "description": "Image",
+    "description": "Microframework php",
     "type": "project",
     "license": "LGPL-3.0-or-later",
     "autoload": {
