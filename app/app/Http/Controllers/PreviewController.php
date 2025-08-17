@@ -23,12 +23,6 @@ class PreviewController extends Controller
      */
     public function show(Request $req, string $uuid, int $w, ?string $format = null)
     {
-//        return response()->json([
-//            'key' => config('imgproxy.key'),
-//            'salt' => config('imgproxy.salt')
-//        ]);
-
-        // 1) Ищем запись
         /** @var FileEntry|null $file */
         $file = FileEntry::query()
             ->where('uuid', $uuid)
@@ -37,12 +31,11 @@ class PreviewController extends Controller
 
         abort_if(!$file, 404);
 
-        // 2) Нормализуем параметры
         $w = max(1, min($w, 4096));
-        $h = (int) $req->query('h', 0); // 0 = авто
+        $h = (int) $req->query('h', 0);
         $h = max(0, min($h, 4096));
 
-        $fit = $req->query('fit', 'fit'); // fit | cover
+        $fit = $req->query('fit', 'fit');
         if (!in_array($fit, ['fit', 'cover'], true)) {
             $fit = 'fit';
         }
@@ -61,15 +54,11 @@ class PreviewController extends Controller
         }
         if ($fmt === 'jpeg') $fmt = 'jpg';
 
-        // 3) Источник (MinIO/S3)
         $bucket = Config::get('filesystems.disks.s3.bucket');
-        // ожидаем, что в БД ключ хранится как "media/<uuid>" или "uploads/2025/..../<uuid>"
         $s3Key  = ltrim($file->s3_key ?? $file->storage_key ?? '', '/');
         abort_if($s3Key === '', 500, 'Empty storage key');
 
         $sourcePlain = "s3://{$bucket}/{$s3Key}";
-
-        // 4) Опции imgproxy. Синтаксис в духе: rs:fit:{w}:{h}/a:true/dpr:{dpr}/q:{q}
         $opts = [
             "rs:" . ($fit === 'cover' ? 'fill' : 'fit') . ":{$w}:" . ($h ?: 0),
             "ar:true",
@@ -90,7 +79,6 @@ class PreviewController extends Controller
             return redirect()->away($imgproxyUrl, 302);
         }
 
-        // Проксирование (если нужно отдавать байты прямо из PHP)
         $resp = Http::timeout(10)->withHeaders([
             'Accept' => '*/*',
         ])->get($imgproxyUrl);
@@ -100,7 +88,7 @@ class PreviewController extends Controller
                 'error' => 'imgproxy_failed',
                 'status' => $resp->status(),
                 'message' => $resp->body(),
-                'link' => $imgproxyUrl,
+//                'link' => $imgproxyUrl,
             ], Response::HTTP_BAD_GATEWAY);
         }
 
@@ -193,8 +181,6 @@ class PreviewController extends Controller
             abort(500, 'IMGPROXY_KEY/SALT invalid hex');
         }
 
-        // В большинстве релизов достаточно aes-256-ctr с нулевым IV.
-        // Если используешь специфичную версию imgproxy со своей KDF — проверь README к твоей версии.
         $iv = str_repeat("\0", 16);
         $cipher = openssl_encrypt($src, 'aes-256-ctr', $key, OPENSSL_RAW_DATA, $iv);
         if ($cipher === false) {

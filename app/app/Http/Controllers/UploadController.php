@@ -36,7 +36,6 @@ class UploadController extends Controller
 
         $key = sprintf('uploads/%s/%s.%s', now()->format('Y/m/d'), $uuid, $ext);
 
-        // Считаем метаданные (w,h, dominant color)
         $manager = new ImageManager(new Driver());
 
         try {
@@ -51,7 +50,6 @@ class UploadController extends Controller
         $width = $img->width();
         $height = $img->height();
 
-        // Dominant color (#RRGGBB)
         try {
             [$r,$g,$b] = ColorThief::getColor($file->getPathname());
             $hex = sprintf("#%02x%02x%02x", $r, $g, $b);
@@ -59,18 +57,15 @@ class UploadController extends Controller
             $hex = null;
         }
 
-        // 100x100 превью base64 (webp)
         $preview = (clone $img)->scaleDown(100, 100)->toWebp(80);
         $base64preview = base64_encode($preview->toString());
 
-        // Загрузка в S3
         $disk = Storage::disk('s3');
         $disk->put($key, file_get_contents($file->getPathname()), [
             'visibility' => 'public',
             'ContentType' => $mime,
         ]);
 
-        // Сохраняем запись
         FileEntry::create([
             'uuid' => $uuid,
             's3_key' => $key,
@@ -86,7 +81,6 @@ class UploadController extends Controller
             'tags' => $req->input('tags', []),
         ]);
 
-        // Ответ в стиле Osnova
         return response()->json([
             'files' => [[
                 'uuid' => $uuid,
